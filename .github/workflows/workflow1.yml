@@ -1,0 +1,16 @@
+name: adding jobs in workflow
+
+on: workflow_call
+jobs:
+
+  reusing_first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Installing Node
+        uses: actions/setup-node@v3 
+
+  reusing_second_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: reused 2nd action
+        run: echo “I am Second Job”
