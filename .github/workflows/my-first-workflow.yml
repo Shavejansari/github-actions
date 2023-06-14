@@ -1,5 +1,5 @@
 name: My Pipeline
-on: push
+on: workflow_call
 jobs:
   my_job:
     runs-on: ubuntu-latest
