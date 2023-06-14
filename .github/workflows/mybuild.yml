@@ -1,0 +1,7 @@
+name: My Build
+on: push
+jobs:
+  my_build_job:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo My Build!!
