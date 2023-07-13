@@ -1,0 +1,22 @@
+name: conditions in workflow
+on: push
+jobs:
+ job-1:
+  runs-on: ubuntu-latest
+  steps:
+  - id: job_1
+    run: echo successfully executes
+    
+ job-success:
+  runs-on: ubuntu-latest
+  needs: [job-1]
+  if: success()
+  steps:
+  - run: echo job is executed
+
+ job-failed:
+  runs-on: ubuntu-latest
+  needs: [job-1]
+  if: failure()
+  steps:
+  - run: echo job not executed
